@@ -86,7 +86,7 @@ frontend/
 
 - Node.js 18+
 - npm atau yarn package manager
-- Backend API berjalan di https://backend-cyd75dr53-andigagagas-projects.vercel.app/
+- Backend API berjalan di http://localhost:3001
 
 ### Instalasi
 
@@ -194,7 +194,7 @@ Aplikasi terhubung ke backend API dengan endpoint berikut:
 Buat file .env.local untuk pengaturan khusus environment:
 
 env
-NEXT_PUBLIC_API_URL=https://backend-cyd75dr53-andigagagas-projects.vercel.app/
+NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ### Tailwind CSS
 
@@ -242,4 +242,8 @@ _GUSWANDI_
 - FullStack Developer
 - Spesialis React & Next.js
 
-_Dibuat dengan ❤ menggunakan Next.js, React, dan Tailwind CSS_
+_Dibuat dengan ❤ menggunakan Next.js, React, dan Tailwind CSS_
+
+## URL Publish
+
+- https://test-higo-backend.vercel.app/
