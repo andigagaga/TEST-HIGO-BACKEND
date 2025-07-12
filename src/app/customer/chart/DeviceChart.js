@@ -21,7 +21,7 @@ export default function DeviceChart() {
     const fetchDeviceData = async () => {
       try {
         const res = await axios.get(
-          "https://backend-qpsh4ft3x-andigagagas-projects.vercel.app/api/customers/device-summary"
+          "https://backend-seven-rho-88.vercel.app/api/customers/device-summary"
         );
         const labels = res.data.map((item) => item._id || "Unknown");
         const values = res.data.map((item) => item.count);
