@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import axios from "axios";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import DeviceChart from "./DeviceChart";
+import LocationChart from "./LocationChart";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -40,8 +42,8 @@ export default function GenderChartPage() {
 
   return (
     <div className="p-10 bg-white min-h-screen">
-      <h2 className="text-2xl font-bold text-blue-600 mb-6">
-        Customer by Gender
+      <h2 className="text-lg font-semibold text-gray-700 mb-4">
+        Chart by Gender
       </h2>
       {chartData ? (
         <div className="flex justify-center">
@@ -52,6 +54,8 @@ export default function GenderChartPage() {
       ) : (
         <p className="text-gray-600">Loading chart...</p>
       )}
+      <DeviceChart />
+      <LocationChart />
     </div>
   );
 }

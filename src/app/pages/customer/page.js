@@ -5,6 +5,7 @@ import axios from "axios";
 import GenderChartPage from "../../customer/chart/page";
 import { handlePrintCustomer } from "../../pdf/printPdf";
 import { FaPrint } from "react-icons/fa";
+import toTitleCase from "../../case/case";
 
 export default function CustomerPage() {
   const [customers, setCustomers] = useState([]);
@@ -109,7 +110,13 @@ export default function CustomerPage() {
               <option value="Apple">Apple</option>
               {/* <option value="Oppo">Oppo</option> */}
               <option value="Xiaomi">Xiaomi</option>
-              <option value="lg">LG</option>
+              <option value="LG">LG</option>
+              <option value="Google">Google</option>
+              <option value="Sony">Sony</option>
+              <option value="motorola">Motorola</option>
+              <option value="OnePlus">Oneplus</option>
+              <option value="Huawei">Huawei</option>
+              <option value="Nokia">Nokia</option>
               {/* Tambahkan device lain jika perlu */}
             </select>
           </div>
@@ -135,6 +142,7 @@ export default function CustomerPage() {
               <option value="coastal">Coastal</option>
               <option value="sub urban">Sub urban</option>
               <option value="Suburban Fringe">Sub urban Fringe</option>
+              <option value="metropolitan">Metropolitan</option>
             </select>
           </div>
           <div>
@@ -188,11 +196,11 @@ export default function CustomerPage() {
                   key={c._id}
                   className="hover:bg-blue-50 border-t border-gray-200 divide-x divide-gray-300"
                 >
-                  <td className="p-4">{c.Name}</td>
+                  <td className="p-4">{toTitleCase(c?.Name)}</td>
                   <td className="p-4">{c.Email}</td>
                   <td className="p-4">{c.gender}</td>
-                  <td className="p-4">{c.Brand_Device}</td>
-                  <td className="p-4">{c.Location_Type}</td>
+                  <td className="p-4">{toTitleCase(c?.Brand_Device)}</td>
+                  <td className="p-4">{toTitleCase(c?.Location_Type)}</td>
                   <td className="p-4">
                     <button
                       onClick={() => handlePrintCustomer(c)}

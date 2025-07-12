@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   return (
     <div className="h-screen w-64 bg-blue-800 text-white p-6 fixed top-0 left-0">
-      <h2 className="text-2xl font-bold mb-6">📊 Admin Panel</h2>
+      <h2 className="text-1xl font-bold mb-6">📊 Dashboard Customer</h2>
       <ul className="space-y-3">
         {navItems.map((item) => (
           <li key={item.name}>
