@@ -43,3 +43,25 @@ exports.getGenderSummary = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+exports.getDeviceSummary = async (req, res) => {
+  try {
+    const summary = await Customer.aggregate([
+      { $group: { _id: "$Brand_Device", count: { $sum: 1 } } },
+    ]);
+    res.json(summary);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+exports.getLocationSummary = async (req, res) => {
+  try {
+    const summary = await Customer.aggregate([
+      { $group: { _id: "$Location_Type", count: { $sum: 1 } } },
+    ]);
+    res.json(summary);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

@@ -1,6 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const { getAllCustomers, getGenderSummary } = require("./controllers");
+const {
+  getAllCustomers,
+  getGenderSummary,
+  getDeviceSummary,
+  getLocationSummary,
+} = require("./controllers");
+
+/**
+ * @swagger
+ * tags:
+ *   name: Customers
+ *   description: API untuk data customer
+ */
 
 /**
  * @swagger
@@ -57,4 +69,41 @@ router.get("/", getAllCustomers);
  */
 router.get("/gender-summary", getGenderSummary);
 
+/**
+ * @swagger
+ * /api/customers/location-summary:
+ *   get:
+ *     summary: Ringkasan jumlah customer berdasarkan location type
+ *     tags: [Customers]
+ *     responses:
+ *       200:
+ *         description: Berhasil mengambil summary lokasi
+ */
+router.get("/device-summary", getDeviceSummary);
+
+/**
+ * @swagger
+ * /api/customers/{id}/print:
+ *   get:
+ *     summary: Cetak PDF untuk satu customer
+ *     tags: [Customers]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID customer
+ *     responses:
+ *       200:
+ *         description: Berhasil menghasilkan PDF
+ *         content:
+ *           application/pdf:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       404:
+ *         description: Customer tidak ditemukan
+ */
+router.get("/location-summary", getLocationSummary);
 module.exports = router;
