@@ -22,7 +22,7 @@ export default function CustomerPage() {
   const fetchCustomers = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/api/customers?page=${page}&limit=${limit}&name=${search}&gender=${gender}&device=${device}&location=${location}`
+        `https://backend-qpsh4ft3x-andigagagas-projects.vercel.app/api/customers?page=${page}&limit=${limit}&name=${search}&gender=${gender}&device=${device}&location=${location}`
       );
       console.log("resss", res.data);
       setCustomers(res.data.data);

@@ -21,7 +21,7 @@ export default function LocationChart() {
     const fetchLocationData = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3001/api/customers/location-summary"
+          "https://backend-qpsh4ft3x-andigagagas-projects.vercel.app/api/customers/location-summary"
         );
         const labels = res.data.map((item) => item._id || "Unknown");
         const values = res.data.map((item) => item.count);
