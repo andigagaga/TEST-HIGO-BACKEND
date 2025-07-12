@@ -6,21 +6,21 @@ Backend API untuk mengelola dan menganalisis data customer. Project ini dibangun
 
 ## Fitur Utama
 
-- _Customer Management_: CRUD operations untuk data customer
-- _Advanced Filtering_: Filter data berdasarkan nama, gender, lokasi, dan device
-- _Pagination_: Dukungan pagination untuk data yang besar
-- _Analytics_: Summary data berdasarkan gender, device, dan lokasi
-- _API Documentation_: Dokumentasi API otomatis dengan Swagger UI
-- _CORS Support_: Cross-Origin Resource Sharing untuk frontend integration
+- Customer Management: CRUD operations untuk data customer
+- Advanced Filtering: Filter data berdasarkan nama, gender, lokasi, dan device
+- Pagination: Dukungan pagination untuk data yang besar
+- Analytics: Summary data berdasarkan gender, device, dan lokasi
+- API Documentation: Dokumentasi API otomatis dengan Swagger UI
+- CORS Support: Cross-Origin Resource Sharing untuk frontend integration
 
 ## Tech Stack
 
-- _Runtime_: Node.js
-- _Framework_: Express.js
-- _Database_: MongoDB dengan Mongoose ODM
-- _Documentation_: Swagger UI
-- _Development_: Nodemon untuk hot reload
-- _Middleware_: CORS, Morgan (logging), dotenv
+- Runtime: Node.js
+- Framework: Express.js
+- Database: MongoDB dengan Mongoose ODM
+- Documentation: Swagger UI
+- Development: Nodemon untuk hot reload
+- Middleware: CORS, Morgan (logging), dotenv
 
 ## Struktur Project
 
@@ -64,18 +64,18 @@ Location_Type: String // Tipe lokasi
 
 ### Langkah Instalasi
 
-1. _Clone repository_
+1. Clone repository
 
    bash
    git clone https://github.com/andigagaga/TEST-HIGO-BACKEND.git backend
    cd backend
 
-2. _Install dependencies_
+2. Install dependencies
 
    bash
    npm install
 
-3. _Setup environment variables_
+3. Setup environment variables
 
    Buat file .env di root directory:
 
@@ -85,7 +85,7 @@ Location_Type: String // Tipe lokasi
    MONGO_URI_LOCAL=mongodb://localhost:27017/customer_db
    MONGO_URI_SERVER=mongodb://your-production-mongo-uri
 
-4. _Jalankan server_
+4. Jalankan server
 
    Development mode:
 
@@ -97,7 +97,7 @@ Location_Type: String // Tipe lokasi
    bash
    npm start
 
-5. _Akses aplikasi_
+5. Akses aplikasi
    - Server: http://localhost:5000
    - API Documentation: http://localhost:5000/api-docs
 
@@ -113,7 +113,7 @@ http://localhost:5000/api
 
 GET /customers
 
-_Query Parameters:_
+Query Parameters:
 
 - name (string): Filter berdasarkan nama (case-insensitive)
 - gender (string): Filter berdasarkan gender
@@ -122,7 +122,7 @@ _Query Parameters:_
 - page (number): Nomor halaman (default: 1)
 - limit (number): Jumlah data per halaman (default: 10)
 
-_Response:_
+Response:
 
 json
 {
@@ -137,7 +137,7 @@ json
 
 GET /customers/gender-summary
 
-_Response:_
+Response:
 
 json
 [
@@ -149,7 +149,7 @@ json
 
 GET /customers/device-summary
 
-_Response:_
+Response:
 
 json
 [
@@ -162,7 +162,7 @@ json
 
 GET /customers/location-summary
 
-_Response:_
+Response:
 
 json
 [
@@ -208,8 +208,8 @@ Aplikasi menggunakan Morgan middleware untuk logging HTTP requests.
 
 Aplikasi mendukung dua environment:
 
-- _Development_: Menggunakan MONGO_URI_LOCAL
-- _Production_: Menggunakan MONGO_URI_SERVER
+- Development: Menggunakan MONGO_URI_LOCAL
+- Production: Menggunakan MONGO_URI_SERVER
 
 ### Collection
 
@@ -256,3 +256,7 @@ ISC License
 ## Support
 
 Untuk pertanyaan atau dukungan, silakan buat issue di repository ini.
+
+## API Production
+
+- https://backend-seven-rho-88.vercel.app
