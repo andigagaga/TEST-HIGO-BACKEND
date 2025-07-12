@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const connectDB = require("./config");
 const customerRoutes = require("./customer/routes");
 const setupSwaggerDocs = require("./swagger");
-const serverless = require("serverless-http");
 
 const app = express();
 
@@ -17,9 +16,12 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Server is running ✅");
+});
+
 app.use("/api/customers", customerRoutes);
 
 setupSwaggerDocs(app);
 
 module.exports = app;
-module.exports.handler = serverless(app);
